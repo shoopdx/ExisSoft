@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="08dbc652-220b-4652-be79-d0b8dfd6d811">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Folio" class="java.lang.String"/>
+	<parameter name="Nombre" class="java.lang.String"/>
+	<parameter name="Stock" class="java.lang.String"/>
+	<parameter name="Precio" class="java.lang.String"/>
+	<parameter name="Saldo" class="java.lang.String"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<parameter name="nOfFiscalizador" class="java.lang.String"/>
+	<parameter name="gOfFiscalizador" class="java.lang.String"/>
+	<parameter name="nOfFinanzas" class="java.lang.String"/>
+	<parameter name="gOfFinanzas" class="java.lang.String"/>
+	<parameter name="nJAdmin" class="java.lang.String"/>
+	<parameter name="gFAdmin" class="java.lang.String"/>
+	<field name="folio" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="stock" class="java.lang.String"/>
+	<field name="precio" class="java.lang.String"/>
+	<field name="saldo" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="193" y="10" width="183" height="50" uuid="35258d7b-5c50-4e43-943e-72df6eb174b8"/>
+				<textElement>
+					<font size="36" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Existencias]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="142" y="60" width="293" height="34" uuid="2c4b77d6-58f9-48f0-92ad-71ff54fe2315"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="435" y="0" width="80" height="20" uuid="b330c563-8095-4c9d-a74b-58d397117b58"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="20" uuid="1757f6ce-41bb-4ade-ba60-5716f3e2c7ce"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="0" width="44" height="20" uuid="be3d9d4c-1f1c-49f3-97f6-9f273e023fdf"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Folio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="79" y="0" width="44" height="20" uuid="f0d900b4-a19e-427b-94f3-44f17e3914b2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Articulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="0" width="59" height="20" uuid="3dd3c3af-d621-44ec-a8cf-09bb531d2435"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="0" width="84" height="20" uuid="80ddbdc8-170d-45a2-bb9d-73bc32897424"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Precio Unitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="0" width="60" height="20" uuid="44bfb038-32ed-4c97-845f-407682bd4823"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Saldo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="14" y="0" width="44" height="20" uuid="f30ad260-bc02-495c-af1a-fc28be3ab66d"/>
+				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="0" width="191" height="20" uuid="79659545-a2c3-46a0-80f3-4a17d4b02d75"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="0" width="58" height="20" uuid="e96f7506-5b74-4b65-b029-84ae85c8795f"/>
+				<textFieldExpression><![CDATA[$F{stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="0" width="84" height="20" uuid="c79f06ec-15f6-44c4-9da6-3e71cf5bbebb"/>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="60" height="20" uuid="0d937400-a468-4379-94f0-a638bf1e7e72"/>
+				<textFieldExpression><![CDATA[$F{saldo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="16" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="258" splitType="Stretch">
+			<staticText>
+				<reportElement x="420" y="10" width="40" height="20" uuid="215807b1-93f4-4acc-88ee-c415eed90736"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="10" width="87" height="20" uuid="fefab3ee-3199-4431-b44a-d23f257f43c8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="32" y="77" width="161" height="20" uuid="56678ec3-78a8-4fd6-8b36-b29fc42228dd"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nOfFiscalizador}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="32" y="97" width="161" height="20" uuid="8eac5067-28ce-47fa-973b-6f757ed88fa5"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gOfFiscalizador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="32" y="117" width="161" height="20" uuid="d1342ab4-d22a-4cac-8b6b-18b92067ffba"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Oficial Fiscalizador]]></text>
+			</staticText>
+			<line>
+				<reportElement x="14" y="71" width="203" height="1" uuid="f775cd40-8d2e-4905-9545-eb9726bf0dd6"/>
+			</line>
+			<textField>
+				<reportElement x="362" y="77" width="161" height="20" uuid="adcf62af-216f-4ed4-a35e-04da765aa6fa"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nOfFinanzas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="362" y="97" width="161" height="20" uuid="ff168ef2-30e7-4b45-b981-c7339f358567"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gOfFinanzas}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="362" y="117" width="161" height="20" uuid="ede3b95c-8ca1-4737-8e55-12e24b5a2ca6"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Oficial de Finanzas]]></text>
+			</staticText>
+			<line>
+				<reportElement x="341" y="70" width="203" height="1" uuid="9ab793d5-a778-4331-9ff2-61f34b32e794"/>
+			</line>
+			<textField>
+				<reportElement x="195" y="174" width="161" height="20" uuid="85adbc02-476b-43fe-970f-b57bf211b70e"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nJAdmin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="195" y="194" width="161" height="20" uuid="9e51cdac-b437-4293-84be-b2a37c065e8c"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gFAdmin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="195" y="214" width="161" height="20" uuid="59503cc8-7f25-4dd2-a05e-6f6a6c48ae50"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jefe Administrativo]]></text>
+			</staticText>
+			<line>
+				<reportElement x="173" y="169" width="203" height="1" uuid="61daa5aa-0626-4cd1-9c7d-aa731ef6d2a5"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

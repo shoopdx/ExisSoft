@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="979f8d4c-cdfb-4dcf-9516-bdf23043e905">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="titulo" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="artiuclo" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.String"/>
+	<field name="nombreDepa" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="19" width="555" height="37" uuid="ceeb1b64-aa39-4b16-80f0-ec221fbd3027"/>
+				<textElement textAlignment="Center">
+					<font size="24" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Guia de Entrega de Materiales]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="61" width="555" height="20" uuid="a43f3506-ac32-4fbd-891b-e7d85a1dad21"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{titulo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="25" y="0" width="100" height="20" uuid="841904ee-aa7a-4de1-a219-cb7a7e282990"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="0" width="100" height="20" uuid="84d55435-4744-4972-9004-cb2b9635e169"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Articulo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="0" width="100" height="20" uuid="19ee5a1a-b81b-41eb-a9d4-9d339fe0ceb2"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="0" width="100" height="20" uuid="18bfe377-12ac-4550-b126-3b71a6a4a3dd"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Observacion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="25" y="2" width="100" height="20" uuid="65182ac5-5a94-4cb3-9fe8-64652dd6b26f"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="2" width="100" height="20" uuid="3015c6f3-be53-447b-aed1-c70fd309f7bd"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="0" width="100" height="20" uuid="acf48b16-aa71-4339-8252-a33eb259905b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreDepa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="2" width="100" height="20" uuid="61d03ad2-c1a5-42e9-b567-4e5f72f61e06"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{artiuclo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="86">
+			<staticText>
+				<reportElement x="405" y="42" width="119" height="18" uuid="17a37949-8937-44e1-a15c-5b8aef4b5eaa"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Gdo., nombre, firma]]></text>
+			</staticText>
+			<line>
+				<reportElement x="35" y="22" width="153" height="1" uuid="d49dd2ba-0270-485c-abd2-4c334d0215d9"/>
+			</line>
+			<staticText>
+				<reportElement x="80" y="26" width="57" height="16" uuid="32f52449-cc44-4bcc-9a80-1ae950311d0b"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Recibe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="42" width="119" height="18" uuid="5e17eca5-d139-4f7c-a701-b446b6874dc7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Gdo., nombre, firma]]></text>
+			</staticText>
+			<line>
+				<reportElement x="384" y="23" width="153" height="1" uuid="04cff400-aecc-4cdd-9196-7a7e5ac171a2"/>
+			</line>
+			<staticText>
+				<reportElement x="432" y="26" width="57" height="16" uuid="459bc802-240d-4c5e-be48-f924b5e58c59"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Entrega]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
